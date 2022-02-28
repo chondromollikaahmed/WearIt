@@ -1,53 +1,63 @@
-<?php
+<?php  
+
+
 require 'form_handlers/register_handler.php';
+require 'form_handlers/login_handler.php';
 ?>
 
 
-
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>WEARit</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/cart.png" type="image/x-icon">
+	<link href="assets\images\logo2.ico" rel="icon" type="image/ico" />
+	<link rel="stylesheet" type="text/css" href="css/register_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/register.js"></script>
 </head>
 <body>
 
 
 
-
-<?php  
-
-if(isset($_POST['register_button'])) {
-    echo '
-    <script>
-
-    $(document).ready(function() {
-        $("#first").hide();
-        $("#second").show();
-    });
-
-    </script>
-
-    ';
-}
-
-
-?>
- 
- <?php
+<?php
 include ("includes/header.php");
 ?>
    
- 
-   <div id="first">
 
-				<form action="register&login.php" method="POST">
+	<?php  
+
+	if(isset($_POST['register_button'])) {
+		echo '
+		<script>
+
+		$(document).ready(function() {
+			$("#first").hide();
+			$("#second").show();
+		});
+
+		</script>
+
+		';
+	}
+
+
+	?>
+
+
+
+		<div class="login_box">
+
+			
+			<br>
+			<div id="first">
+
+				<form action="register.php" method="POST">
 					<input type="email" name="log_email" placeholder="Email Address" value="<?php 
 					if(isset($_SESSION['log_email'])) {
 						echo $_SESSION['log_email'];
@@ -67,7 +77,7 @@ include ("includes/header.php");
 
 			<div id="second">
 
-				<form action="register&login.php" method="POST">
+				<form action="register.php" method="POST">
 					<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
 					if(isset($_SESSION['reg_fname'])) {
 						echo $_SESSION['reg_fname'];
@@ -121,11 +131,18 @@ include ("includes/header.php");
 					<a href="#" id="signin" class="signin">Already have an account? Sign in here!</a>
 				</form>
 			</div>
-  
- <?php
+
+		</div>
+
+	
+
+
+	
+	<?php
 include ("includes/footer.php");
 ?>
    
-    
+
+
 </body>
 </html>

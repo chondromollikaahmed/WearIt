@@ -38,7 +38,7 @@ create TABLE orders (
 
 
 create table order_details (
-    detail_id int(11) NOT NULL AUTO_INCREMENT,
+    detail_id int(11) NOT NULL AUTO_INCREMENT UNIQUE,
     order_id int(11) NOT NULL,
     product_id int(11) NOT NULL,
     quantity int(11) NOT NULL,
