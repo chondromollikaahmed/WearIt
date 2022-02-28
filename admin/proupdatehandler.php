@@ -17,7 +17,7 @@ $file_store="uploads/".$file_name;
 move_uploaded_file($file_tmp, $file_store);
 
 
-$sql="UPDATE products set name='$newname', price='$newprice', description='$newdesc', category_id='$newcat', picture='$file_path' where id='$newid'";
+$sql="UPDATE product set product_name='$newname', product_price='$newprice', product_description='$newdesc', catagory_id='$newcat', product_image='$file_path' where product_id='$newid'";
 
 if (mysqli_query($connect,$sql)) {
 	header('location: productsshow.php');

@@ -30,7 +30,9 @@ include ("includes/header.php");
        </div>
         
         
-        <div class="row">
+        
+       
+           <div class="row">
             <div class="col-4">
                 <a href="product_details1.html"><img src="images/product-1.jpg"></a>
                 <h4 style="text-align: center;">Red T-shirt</h4>
@@ -98,11 +100,28 @@ include ("includes/header.php");
                     <p style="text-align: center;">&#2547 500.00</p>
                 </div>
     
+
+                <?php
+
+				include("includes/connect.php");
+				$sql="select * from product";
+				$results=$connect->query($sql);
+
+
+				while ($final=$results->fetch_assoc()) {
+
+				?>
+
                 <div class="col-4">
                     <img src="images/product-12.jpg">
                     <h4 style="text-align: center;">BlackT-shirt</h4>
                     <p style="text-align: center;">&#2547 500.00</p>
                 </div>
+
+                <?php } ?>
+
+
+
             </div>
         </div>
       <div class="pg-btn">

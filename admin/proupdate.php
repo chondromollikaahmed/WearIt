@@ -44,7 +44,7 @@ include('adminpartials/head.php');
 
           include('../partials/connect.php');
 
-          $sql="Select * from products WHERE id='$newid'";
+          $sql="Select * from product WHERE product_id='$newid'";
 
           $results=$connect->query($sql);
 
@@ -56,28 +56,28 @@ include('adminpartials/head.php');
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" value="<?php echo $final['name'] ?>" name="name">
+                  <input type="text" class="form-control" id="name" placeholder="Enter Product Name" value="<?php echo $final['product_name'] ?>" name="name">
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $final['price'] ?>" name="price">
+                  <input type="text" class="form-control" id="price" placeholder="Price" value="<?php echo $final['product_price'] ?>" name="price">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file" value="<?php echo $final['picture'] ?>">
+                  <input type="file" id="picture" name="file" value="<?php echo $final['product_image'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" value="<?php echo $final['description'] ?>" name="description"></textarea>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" value="<?php echo $final['product_description'] ?>" name="description"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
                   <select id="category" name="category" value="<?php echo $final['category'] ?>">
                     <?php
-                    $cat="SELECT * from categories";
+                    $cat="SELECT * from catagory";
                     $results=mysqli_query($connect,$cat);
                     while($row=mysqli_fetch_assoc($results)){
-                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    echo "<option value=".$row['catagory_id'].">".$row['catagory_name']."</option>";
                   }
                     ?>
                   </select>
@@ -85,7 +85,7 @@ include('adminpartials/head.php');
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="hidden" value="<?php echo $final['id'] ?>" name="form_id">
+                <input type="hidden" value="<?php echo $final['product_id'] ?>" name="form_id">
                 <button type="submit" class="btn btn-primary" name="update">Update</button>
               </div>
             </form>
