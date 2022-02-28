@@ -11,25 +11,10 @@
 </head>
 <body>
    
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="images/Graphic1.png" width="125px">
-            </div>
-            <nav>
-                <ul id="menuitem">
-                    <li><a href="index.html" target="_blank">Home</a></li>
-                    <li><a href="product.html"  target="_blank">Products</a></li>
-                    <li><a href="aboutus.html"  target="_blank">About</a></li>
-                    <li><a href="contact.html"  target="_blank">Contact</a></li>
-                    <li><a href="accountR.html"  target="_blank">Account</a></li>
-                </ul>
-            </nav>
-            <img src="images/cart.png" width="30px" height="30px">
-            <img src="images/menu.png" class="menu" onclick="menutoggle()">
-        </div>
-      
-    </div>
+ <?php
+include ("includes/header.php");
+?>
+   
  
     <div class="categories-container single-product">
         <div class="row">
@@ -118,34 +103,10 @@
     </div>
   
 
-   <div class="footer">
-       <div class="container">
-           <div class="row">
-               <div class="footer-col1">
-                   <h1>Useful links</h1>
-                   <ul style="list-style-type:none">
-                    <li><a href=""><span style="color: #f6847c;">Coupons</span></a></li>
-                    <li><a href=""><span style="color: #f6847c;">Blogs</span></a></li>
-                    <li><a href=""><span style="color: #f6847c;">Return Policy</span></a></li>
-                  
-                   </ul>
-               </div>
-
-               <div class="footer-col2">
-                  <a href=""><img src="images/footerlogo.png"></a> 
-               </div>
-               
-               <div class="footer-col3">
-                <h1>Find us</h1>
-                <ul style="list-style-type:none">
-                    <li><a href=""><span style="color: #f6847c;">FaceBook</span></a></li>
-                    <li><a href=""><span style="color: #f6847c;">Instagram</span></a></li>
-                    <li><a href=""><span style="color: #f6847c;">Twitter</span></a></li>
-                </ul>
-            </div>
-           </div>
-       </div>
-   </div>
+    <?php
+include ("includes/footer.php");
+?>
+   
 
    <script>
        var menuitem = document.getElementById("menuitem");
