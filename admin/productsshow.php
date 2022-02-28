@@ -42,20 +42,20 @@ include('adminpartials/head.php');
           <?php
           include('../partials/connect.php');
 
-          $sql="Select * from products";;
+          $sql="Select * from product";;
           $results=$connect->query($sql);
           while($final=$results->fetch_assoc()){ ?>
 
-            <a href="proshow.php?pro_id=<?php echo $final['id']?>">
-            <h3><?php echo $final['id'] ?>: <?php echo $final['name']?></h3><br>
+            <a href="proshow.php?pro_id=<?php echo $final['product_id']?>">
+            <h3><?php echo $final['product_id'] ?>: <?php echo $final['product_name']?></h3><br>
 
           </a>
 
-          <a href="proupdate.php?up_id=<?php echo $final['id'] ?>">
+          <a href="proupdate.php?up_id=<?php echo $final['product_id'] ?>">
             <button>Update</button>
           </a>
 
-          <a href="prodelete.php?del_id=<?php echo $final['id'] ?>">
+          <a href="prodelete.php?del_id=<?php echo $final['product_id'] ?>">
             <button style="color:red">Delete</button>
           </a><hr>
 

@@ -4,16 +4,16 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$connect = mysqli_connect($servername, $username, $password);
 // Check connection
-if (!$conn) {
+if (!$connect) {
 die("Connection failed: " . mysqli_connect_error());
 }
 
 
 
 try{
-    $conn = mysqli_connect($servername, $username,
+    $connect = mysqli_connect($servername, $username,
     $password, "wearit");        
 }
 catch(Exception $e)

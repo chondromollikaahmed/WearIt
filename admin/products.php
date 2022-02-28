@@ -59,13 +59,13 @@ include('adminpartials/head.php');
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
-                  <select id="category" name="category">
+                  <select id="category"  name="category">
                     <?php
                     include('../partials/connect.php');
-                    $cat="SELECT * from categories";
+                    $cat="SELECT * from catagory";
                     $results=mysqli_query($connect,$cat);
                     while($row=mysqli_fetch_assoc($results)){
-                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    echo "<option value=".$row['catagory_id'].">".$row['catagory_name']."</option>";
                   }
                     ?>
                   </select>

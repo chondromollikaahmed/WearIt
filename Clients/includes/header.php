@@ -6,10 +6,10 @@
             </div>
             <nav>
                 <ul id="menuitem">
-                    <li><a href="index.php" >Home</a></li>
-                    <li><a href="product.php"  >Products</a></li>
-                    <li><a href="aboutus.php"  >About</a></li>
-                    <li><a href="contact.php"  >Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="product.php">Products</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="register&login.php" >Account</a></li>
                 </ul>
             </nav>

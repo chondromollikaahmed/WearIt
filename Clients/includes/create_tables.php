@@ -69,6 +69,8 @@ $sqlCat=
 "create table IF NOT EXISTS catagory(
     catagory_id int(11) NOT NULL AUTO_INCREMENT,
     catagory_name varchar(255) NOT NULL,
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (catagory_id)
 )";
 
@@ -88,12 +90,38 @@ create table product (
 )";
 
 
+
+$sqlContact ="create table contact (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    email varchar(255) NOT NULL,
+    msg varchar(255) NOT NULL,
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+)";
+
+
+
+$sqlAdmin ="create table admins(
+
+    id int(11) NOT NULL AUTO_INCREMENT,
+    username varchar(255) NOT NULL,
+    password varchar(255) NOT NULL,
+    primary key(id)
+)";
+
+
 CreateTable($conn,$sqlCus);
 CreateTable($conn,$sqlOrder);
 CreateTable($conn,$sqlOrd);
 
 CreateTable($conn,$sqlCat);
 CreateTable($conn,$sqlProduct);
+
+CreateTable($conn,$sqlContact);
+
+CreateTable($conn,$sqlAdmin);
+
 
 
 

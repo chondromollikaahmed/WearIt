@@ -21,7 +21,7 @@ move_uploaded_file($file_tmp, $file_store);
 
 
 
-$sql="INSERT INTO products(name,price,picture,description,category_id) VALUES('$name','$price','$file_path','$description','$category')";
+$sql="INSERT INTO product(product_name,product_price,product_image,product_description,catagory_id) VALUES('$name','$price','$file_path','$description','$category')";
 
 $connect->query($sql);
 
