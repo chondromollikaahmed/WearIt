@@ -16,7 +16,9 @@
 
 
 
+            <a href="cart.php">
             <img src="images/cart.png" width="30px" height="30px">
+            </a>
             <img src="images/menu.png" class="menu" onclick="menutoggle()">
 
 

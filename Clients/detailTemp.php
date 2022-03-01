@@ -59,7 +59,11 @@ include ("includes/header.php");
                 </select>
 
                 <input type="number" value="1">
-                <a href="" class="btn">Add to cart</a>
+                <a href="
+                
+                carthandler.php?cart_id=<?php echo $final['product_id'] ?>&cart_name=<?php echo $final['product_name'] ?>&cart_price=<?php echo $final['product_price'] ?>
+                
+                " class="btn">Add to cart</a>
                 <h3>Product details</h3>
                <p><?php echo $final['product_description'] ?></p> 
 

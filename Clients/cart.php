@@ -26,50 +26,51 @@ include ("includes/header.php");
                 <th>Total</th>
             </tr>
 
+
+
+
+                               <?php 
+
+session_start();
+								$total=0;
+								if (isset($_SESSION['cart'])) {
+									
+									foreach ($_SESSION['cart'] as $key => $value) {
+									$total=$total+$value['item_price'];
+								?>
             <tr>
                 <td>
                     <div class="cart-info">
                         <img src="images/buy-1.jpg">
                         <div>
-                            <p>red T-shirt</p>
-                            <small>&#2547 500.00</small>
+                            <p><?php echo $value['item_name'] ?></p>
+                            <small>&#2547
+                                 <?php echo $value['item_price']?> 
+                        
+                        </small>
                             <a href="">Remove</a>
                         </div>
                     </div>
                 </td>
                 <td><input type="number" value="1"></td>
-                <td>&#2547 500.00</td>
+                <td>&#2547
+                    
+                <?php echo $total ?>
+            
+            </td>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-2.jpg">
-                        <div>
-                            <p>red T-shirt</p>
-                            <small>&#2547 500.00</small>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>&#2547 500.00</td>
-            </tr>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-3.jpg">
-                        <div>
-                            <p>red T-shirt</p>
-                            <small>&#2547 500.00</small>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>&#2547 500.00</td>
-            </tr>
+
+            <?php }
+									
+								} ?>
+
+            
+
+
+
+
         </table>
     </div>
 
@@ -78,20 +79,6 @@ include ("includes/header.php");
 include ("includes/footer.php");
 ?>
 
-    <script>
-        var menuitem = document.getElementById("menuitem");
-        menuitem.style.maxHeight = "0px";
-
-        function menutoggle() {
-            if (menuitem.style.maxHeight == "0px") {
-                menuitem.style.maxHeight = "200px"
-            }
-
-            else {
-                menuitem.style.maxHeight == "0px"
-            }
-        }
-    </script>
 
    
 
