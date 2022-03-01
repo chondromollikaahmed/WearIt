@@ -32,74 +32,9 @@ include ("includes/header.php");
         
         
        
-           <div class="row">
-            <div class="col-4">
-                <a href="product_details1.html"><img src="images/product-1.jpg"></a>
-                <h4 style="text-align: center;">Red T-shirt</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
 
-            <div class="col-4">
-                <img src="images/product-2.jpg">
-                <h4 style="text-align: center;">Black Shoes</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
+    <div class="row">
 
-            <div class="col-4">
-                <img src="images/product-3.jpg">
-                <h4 style="text-align: center;">Grey Shoes</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/product-4.jpg">
-                <h4 style="text-align: center;">BlackT-shirt</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <img src="images/product-5.jpg">
-                <h4 style="text-align: center;">Red T-shirt</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/product-6.jpg">
-                <h4 style="text-align: center;">Black Shoes</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/product-7.jpg">
-                <h4 style="text-align: center;">Grey Shoes</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-
-            <div class="col-4">
-                <img src="images/product-8.jpg">
-                <h4 style="text-align: center;">BlackT-shirt</h4>
-                <p style="text-align: center;">&#2547 500.00</p>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                    <img src="images/product-9.jpg">
-                    <h4 style="text-align: center;">Red T-shirt</h4>
-                    <p style="text-align: center;">&#2547 500.00</p>
-                </div>
-    
-                <div class="col-4">
-                    <img src="images/product-10.jpg">
-                    <h4 style="text-align: center;">Black Shoes</h4>
-                    <p style="text-align: center;">&#2547 500.00</p>
-                </div>
-    
-                <div class="col-4">
-                    <img src="images/product-11.jpg">
-                    <h4 style="text-align: center;">Grey Shoes</h4>
-                    <p style="text-align: center;">&#2547 500.00</p>
-                </div>
-    
 
                 <?php
 
@@ -113,9 +48,23 @@ include ("includes/header.php");
 				?>
 
                 <div class="col-4">
-                    <img src="images/product-12.jpg">
-                    <h4 style="text-align: center;">BlackT-shirt</h4>
-                    <p style="text-align: center;">&#2547 500.00</p>
+
+
+                <a href="detailTemp.php?details_id=<?php echo $final['product_id']?>" >
+		
+                
+                      <img src=
+                       "../admin/<?php echo $final['product_image'];?>">
+        
+							</a>
+                    
+                    <h4 style="text-align: center;">
+                <?php echo $final['product_name']; ?>
+                </h4>
+                    <p style="text-align: center;">&#2547 
+                <?php echo $final['product_price']; ?>
+                
+                </p>
                 </div>
 
                 <?php } ?>

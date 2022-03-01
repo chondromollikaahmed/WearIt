@@ -35,10 +35,19 @@ include ("includes/header.php");
                     </div>
                 </div>
             </div>
+            
+            <?php
+				include("includes/connect.php");
+				$id=$_GET['details_id'];
+				$sql="Select * from product where product_id='$id'";
+				$results=$connect->query($sql);
+				$final=$results->fetch_assoc();
+
+				?>
             <div class="col-2">
                 <p>Home/T-Shirt</p>
-                <h1>Red printed t-shirt</h1>
-                <h4>&#2547 500.00</h4>
+                <h1><?php echo $final['product_name'] ?></h1>
+                <h4>&#2547 <?php echo $final['product_price'] ?></h4>
 
                 <select>
                     <option>Select size</option>
@@ -52,7 +61,7 @@ include ("includes/header.php");
                 <input type="number" value="1">
                 <a href="" class="btn">Add to cart</a>
                 <h3>Product details</h3>
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores debitis modi culpa totam praesentium sit.</p> 
+               <p><?php echo $final['product_description'] ?></p> 
 
             </div>
         </div>
@@ -108,20 +117,7 @@ include ("includes/footer.php");
 ?>
    
 
-   <script>
-       var menuitem = document.getElementById("menuitem");
-       menuitem.style.maxHeight = "0px";
-
-       function menutoggle(){
-           if(menuitem.style.maxHeight == "0px"){
-            menuitem.style.maxHeight = "200px"
-           }
-
-           else{
-            menuitem.style.maxHeight == "0px"
-           }
-       }
-   </script>
+   
 
    <script>
        var ProductImg = document.getElementById("ProductImg");
